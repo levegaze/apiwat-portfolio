@@ -11,6 +11,9 @@ dioxus = { version = "0.7.1", features = ["router"] }
 gloo-timers = { version = "0.3", features = ["futures"] }
 dioxus-free-icons = { version = "0.10", features = ["font-awesome-solid", "font-awesome-brands"] }
 
+[build-dependencies]
+chrono = "0.4"
+
 [features]
 default = ["web"]
 # The feature that are only required for the web = ["dioxus/web"] build target should be optional and only enabled in the web = ["dioxus/web"] feature

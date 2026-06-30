@@ -382,6 +382,7 @@ h2.section-title{
 .contact-links .btn-primary{background:#8FA05A;color:#26210F}
 .contact-links .btn-ghost{border-color:#4A4127;color:#EDE7D4}
 .contact-links .btn-ghost:hover{border-color:#B5AB8C}
+.build-date{margin-top:28px;font-size:12px;color:#4A4127;font-family:'JetBrains Mono',monospace}
 
 footer{
   padding:32px 0 48px;text-align:center;

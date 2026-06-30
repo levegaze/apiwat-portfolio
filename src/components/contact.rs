@@ -3,14 +3,10 @@ use dioxus::prelude::*;
 use crate::i18n::{tx, use_lang, Tx};
 
 const TITLE: Tx = tx("มาสร้างอะไรที่อยู่ยืนกันเถอะ", "Let's build something that lasts");
-const BODY: Tx = tx(
-    "เปิดรับโอกาสงานด้าน software / backend engineering — พร้อมคุยเรื่อง actor system, event sourcing หรือทำไม C ยังสำคัญอยู่",
-    "Open to software / backend engineering roles — happy to talk actor systems, event sourcing, or why C still matters.",
-);
 const BTN_MAIL: Tx = tx("ส่งอีเมลถึงฉัน", "Email me");
-
-// TODO: real email — still the prototype placeholder.
-const EMAIL: &str = "apiwat@example.com";
+const EMAIL: &str = "enberkaych@gmail.com";
+const UPDATED_TH: &str = concat!("อัพเดทล่าสุด ", env!("BUILD_DATE_TH"));
+const UPDATED_EN: &str = concat!("Last updated ", env!("BUILD_DATE_EN"));
 
 #[component]
 pub fn Contact() -> Element {
@@ -21,7 +17,6 @@ pub fn Contact() -> Element {
         section { id: "contact",
             div { class: "contact-box",
                 h2 { "{TITLE.t(l)}" }
-                p { "{BODY.t(l)}" }
                 div { class: "contact-links",
                     a { class: "btn btn-primary", href: "mailto:{EMAIL}", "{BTN_MAIL.t(l)}" }
                     a {
@@ -30,6 +25,9 @@ pub fn Contact() -> Element {
                         target: "_blank",
                         "GitHub ↗"
                     }
+                }
+                p { class: "build-date",
+                    if l == crate::i18n::Lang::Th { "{UPDATED_TH}" } else { "{UPDATED_EN}" }
                 }
             }
         }
